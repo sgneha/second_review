@@ -12,6 +12,9 @@ describe 'filters the track' do
   it 'when  single frequency is send exactly same as lower threshold' do
     expect(filter([40], 40, 1000)).to eq [40]
   end
+  it 'when  single frequency is send exactly same as higher threshold' do
+    expect(filter([1000], 40, 1000)).to eq [1000]
+  end
 
   it 'when  frequency is send exactly same as threshold' do
     expect(filter([40, 1000], 40, 1000)).to eq [40, 1000]
