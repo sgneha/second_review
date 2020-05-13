@@ -19,6 +19,10 @@ describe 'filters the track' do
   it 'when  frequency is send exactly same as threshold' do
     expect(filter([40, 1000], 40, 1000)).to eq [40, 1000]
   end
+  it 'when double frequency is send within threshold limit' do
+    expect(filter([50, 500], 40, 1000)).to eq [50, 500]
+  end
+
   it 'when  array is list of many frequencies both within limit as well as outside limit ' do
     expect(filter([10, 45, 100, 1001], 40, 1000)).to eq [40, 45, 100, 1000]
   end
