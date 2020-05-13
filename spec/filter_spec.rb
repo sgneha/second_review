@@ -12,4 +12,7 @@ describe 'filters the track' do
   it 'when  array is list of many frequencies both within limit as well as outside limit ' do
     expect(filter([10, 45, 100, 1001], 40, 1000)).to eq [40, 45, 100, 1000]
   end
+  it 'when empty array of frequencies are passed' do
+    expect { filter([], 40, 1000) }.to raise_error 'Please provide frequencies'
+  end
 end
