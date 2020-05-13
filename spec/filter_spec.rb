@@ -6,4 +6,7 @@ describe 'filters the track' do
   it 'when single frequency is send higher than highest threshold' do
     expect(filter([1500], 40, 1000)).to eq [1000]
   end
+  it 'when  frequency is send exactly same as threshold' do
+    expect(filter([40, 1000], 40, 1000)).to eq [40, 1000]
+  end
 end

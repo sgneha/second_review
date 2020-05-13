@@ -1,11 +1,14 @@
 def filter(tracks, lowest, highest)
   result = []
-  result << if tracks.first < lowest
-              lowest
-            elsif
-    tracks.first > highest
-              highest
-            else
-              tracks.first
-                      end
+  tracks.each do |freq|
+    result << if freq < lowest
+                lowest
+              elsif
+      freq > highest
+                highest
+              else
+                freq
+              end
+  end
+  result
 end
