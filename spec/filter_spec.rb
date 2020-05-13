@@ -15,4 +15,7 @@ describe 'filters the track' do
   it 'when empty array of frequencies are passed' do
     expect { filter([], 40, 1000) }.to raise_error 'Please provide frequencies'
   end
+  it 'raises error when lower threshold is not lower than higher threshold ' do
+    expect { filter([45, 100], 40, 30) }.to raise_error 'Please provide adequate threshold values'
+  end
 end
